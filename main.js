@@ -17,4 +17,17 @@ app.get('/', function(req,res){
 
 })
 
+// o método post serve para incluir dados no servidor
+app.post('/api', (req,res) =>{
+    console.log("foi mandado: \n", req.body)
+    _key = req.body.key
+    _key2 = req.body.key2
+    res.status(200).send(
+    {   success: 'true',
+        message: 'Ok'
+    }
+    )
+})
+
+
 app.listen(port,() => console.log(`estou escutando na porta ${port}`))
